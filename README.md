@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+## Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Flash Cards is a **demo React application** built to demonstrate how simple interactivity, state management, and component rendering work in React.  
+It’s designed as a small, easy-to-understand project for beginners who want to explore React fundamentals without the complexity of large frameworks or heavy styling libraries.  
+In this demo, a grid of flashcards displays questions on the front and reveals answers on click, making it an engaging way to present study material.  
+The project can serve as a **learning reference** for aspiring developers or as a base for creating more advanced study tools. Because of its clean and minimal structure, it’s straightforward to customize, extend, or integrate into other projects.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Interactive Card Flipping**: Click on a card to reveal its answer and click again to flip back to the question — showcasing event handling in React.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Responsive Layout**: Uses CSS Grid to arrange cards in a responsive 3-column format (adjustable for various devices).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Minimal Dependencies**: Built only with React and CSS for simplicity and speed.
 
-### `npm test`
+- **Customizable Content**: Flashcard data is stored in a single array for easy editing — no database or backend required.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Highlighted Selection**: The active card is styled differently to help demonstrate conditional rendering in React.
 
-### `npm run build`
+- **Beginner-Friendly Code**: Ideal for developers learning about state (`useState`), mapping arrays to components, and applying conditional classes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tech stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **React** (functional components + hooks)
+- **Plain CSS** for styling (`index.css`)
+- Works with **Create React App or Vite**
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+/src
+  ├─ App.js        # Main component and FlashCards component (cards data + logic)
+  ├─ index.js      # React entry point
+  └─ index.css     # Styles for layout + selected card state
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Installation & run
 
-## Learn More
+```bash
+# install dependencies
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# start dev server
+npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# build for production
+npm run build
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## How it works (brief)
 
-### Analyzing the Bundle Size
+- `questions` is an array of `{ id, question, answer }` objects.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- `FlashCards` stores `selectedId` in state to track the active card.
 
-### Making a Progressive Web App
+- Clicking a card toggles between question and answer.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Conditional rendering and CSS classes manage the flipped/selected state.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## How to add / customize cards
 
-### Deployment
+Edit the `questions` array in `App.js`:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```js
+const questions = [
+  {
+    id: 1001,
+    question: "What is JSX?",
+    answer: "A syntax extension for JavaScript used by React",
+  },
+  {
+    id: 1002,
+    question: "What hook gives components state?",
+    answer: "useState",
+  },
+];
+```
 
-### `npm run build` fails to minify
+Ensure IDs are unique.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## Learnings
+
+- Building interactivity with React hooks (`useState`).
+
+- Rendering lists dynamically with `.map()`.
+
+- Applying conditional styles based on state.
+
+- Using CSS Grid for responsive layouts.
+
+---
+
+## Contributions
+
+Contributions are welcome!
+
+If you’d like to improve the app, fix a bug, or add a new feature, follow these steps:
+
+1. **Fork** the repository.
+
+2. Create a new branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Commit your changes and push to your fork.
+
+4. Open a Pull Request describing your changes in detail.
