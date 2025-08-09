@@ -62,7 +62,7 @@ Ensure IDs are unique.
   └─ index.css     # Styles for layout + selected card state
 ```
 
-## 🏃 Installation & run
+## 🚀 Installation & run
 
 ```bash
 # install dependencies
